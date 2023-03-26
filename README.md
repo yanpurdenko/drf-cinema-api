@@ -76,5 +76,5 @@ Alos use http://127.0.0.1:8000/ url instead of http://0.0.0.0:8000/
 
 
 ## How to try it out
-1. When you received access token, authorize with it on /api/doc/swagger/ and execute all endpoints.
-2. Or you can install ModHeader extension in Google Chrome and create request header with value Bearer <Your access token>
+1. When you received access token, authorize with it on /api/doc/swagger/ and execute all endpoints
+2. Or you can install ModHeader extension in Google Chrome and create request header with value Bearer `<Your access token>`
