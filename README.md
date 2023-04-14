@@ -39,15 +39,9 @@ venv\Scripts\activate
 ```shell
 pip install -r requirements.txt
 ```
-5. Open file .env-sample and change environment variables to yours. Also rename file extension to .env
+5. Create file .env and change environment variables to yours as in .env.sample.
 
-```shell
-set DB_ HOST=<your db hostname>
-set DB NAME=<your db name>
-set DB_USER=<your db username>
-set DB PASSWORD=<your db user password>
-set SECRET KEY=<your secret key>
-```
+
 6. Run migrations to initialize database. Use this command:
 ```shell
 python manage.py migrate
