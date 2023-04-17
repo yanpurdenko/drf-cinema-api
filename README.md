@@ -23,7 +23,11 @@ API service for cinema management written on DRF
 ```shell
 git clone https://github.com/yanpurdenko/drf-cinema-api.git
 ```
-3. Install venv, and activate it by using following commands:
+3. Change directory
+```shell
+cd drf-cinema-api
+```
+4. Install venv, and activate it by using following commands:
 ```shell
 python -m venv venv
 ```
@@ -35,18 +39,18 @@ to activate on Windows:
 ```shell
 venv\Scripts\activate
 ```
-4. Install dependencies (requirements):
+5. Install dependencies (requirements):
 ```shell
 pip install -r requirements.txt
 ```
-5. Create file .env and change environment variables to yours as in .env.sample.
+6. Create file .env and change environment variables to yours as in .env.sample.
 
 
-6. Run migrations to initialize database. Use this command:
+7. Run migrations to initialize database. Use this command:
 ```shell
 python manage.py migrate
 ```
-7. Run server
+8. Run server
 ```shell
 python manage.py runserver
 ```
