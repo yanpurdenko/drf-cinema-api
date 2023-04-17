@@ -38,6 +38,14 @@ class GenreViewSet(
     serializer_class = GenreSerializer
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
 
+    def create(self, request, *args, **kwargs):
+        """Create a genre"""
+        return super().create(request, *args, **kwargs)
+
+    def list(self, request, *args, **kwargs):
+        """Return all genres"""
+        return super().list(request, *args, **kwargs)
+
 
 class ActorViewSet(
     mixins.CreateModelMixin,
@@ -48,6 +56,14 @@ class ActorViewSet(
     serializer_class = ActorSerializer
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
 
+    def create(self, request, *args, **kwargs):
+        """Create an actor"""
+        return super().create(request, *args, **kwargs)
+
+    def list(self, request, *args, **kwargs):
+        """Return all actors"""
+        return super().list(request, *args, **kwargs)
+
 
 class CinemaHallViewSet(
     mixins.CreateModelMixin,
@@ -57,6 +73,14 @@ class CinemaHallViewSet(
     queryset = CinemaHall.objects.all()
     serializer_class = CinemaHallSerializer
     permission_classes = (IsAdminOrIfAuthenticatedReadOnly,)
+
+    def create(self, request, *args, **kwargs):
+        """Create a cinema hall"""
+        return super().create(request, *args, **kwargs)
+        
+    def list(self, request, *args, **kwargs):
+        """Return all cinema halls"""
+        return super().list(request, *args, **kwargs)
 
 
 class MovieViewSet(
@@ -144,7 +168,16 @@ class MovieViewSet(
         ]
     )
     def list(self, request, *args, **kwargs):
+        """Return all movies"""
         return super().list(request, *args, **kwargs)
+
+    def create(self, request, *args, **kwargs):
+        """Create a movie"""
+        return super().create(request, *args, **kwargs)
+
+    def retrieve(self, request, *args, **kwargs):
+        """Return a movie as per id"""
+        return super().retrieve(request, *args, **kwargs)
 
 
 class MovieSessionViewSet(viewsets.ModelViewSet):
@@ -203,7 +236,28 @@ class MovieSessionViewSet(viewsets.ModelViewSet):
         ]
     )
     def list(self, request, *args, **kwargs):
+        """Return all movie sessions"""
         return super().list(request, *args, **kwargs)
+
+    def create(self, request, *args, **kwargs):
+        """Create a movie session"""
+        return super().create(request, *args, **kwargs)
+
+    def retrieve(self, request, *args, **kwargs):
+        """Return a movie session as per id"""
+        return super().retrieve(request, *args, **kwargs)
+
+    def update(self, request, *args, **kwargs):
+        """Update a movie session as per id"""
+        return super().update(request, *args, **kwargs)
+
+    def partial_update(self, request, *args, **kwargs):
+        """Partial update a movie session as per id"""
+        return super().partial_update(request, *args, **kwargs)
+
+    def destroy(self, request, *args, **kwargs):
+        """Delete a movie session as per id"""
+        return super().destroy(request, *args, **kwargs)
 
 
 class OrderPagination(PageNumberPagination):
@@ -234,3 +288,11 @@ class OrderViewSet(
 
     def perform_create(self, serializer):
         serializer.save(user=self.request.user)
+
+    def create(self, request, *args, **kwargs):
+        """Create an order"""
+        return super().create(request, *args, **kwargs)
+
+    def list(self, request, *args, **kwargs):
+        """Return all user orders"""
+        return super().list(request, *args, **kwargs)
